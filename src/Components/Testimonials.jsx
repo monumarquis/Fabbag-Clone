@@ -3,11 +3,9 @@ import {
   Box,
   IconButton,
   useBreakpointValue,
-  Stack,
   Heading,
   Text,
   Container,
-  Center,
   VStack,
   Divider
 } from '@chakra-ui/react';
@@ -25,7 +23,7 @@ const settings = {
   infinite: true,
   autoplay: true,
   speed: 500,
-  autoplaySpeed: 5000,
+  autoplaySpeed: 3000,
   slidesToShow: 1,
   slidesToScroll: 1,
 };
@@ -164,28 +162,31 @@ export default function Testimonials() {
             backgroundAttachment="fixed"
             backgroundImage={`url(${card.image})`}>
             {/* This is the block you need to change, to customize the caption */}
-            <Container size="container.2xl" height="600px" position="relative">
-                <Center>
+            <Container size="container.2xxl" height="600px" position="relative">
+                {/* <Center> */}
                 <VStack  mb="20" spacing="7">
                     <Heading as="h1" fontWeight="bold" mt="2">TESTIMONIALS</Heading>
                     <Divider orientation='horizontal' borderColor="#ECC94B" maxW="300px" sx={{borderBottomWidth:2.5}} />
+                    <ImQuotesLeft size="100"></ImQuotesLeft>
                 </VStack>
-                    </Center>
-              <Stack
+                
+                    {/* </Center> */}
+              <VStack
                 spacing={6}
                 w={'full'}
-                maxW={'xl'}
+                maxW={'lg'}
                 position="absolute"
                 top="50%"
-                transform="translate(0, -50%)">
-                    <Center><ImQuotesLeft size="100"></ImQuotesLeft></Center>
-                <Heading  mt="30" fontSize={{ base: '3xl', md: '4xl', lg: '2xl' }}>
+                transform="translate(10%, -20%)"
+                >
+                    
+                <Heading  mt="30" fontSize={{ base: 'sm', md: 'md', lg: 'xl' }} fontWeight="500" w='100%'>
                   {card.title}
                 </Heading>
                 <Text fontSize={{ base: 'md', lg: 'lg' }} fontfamily="sans-erif" color="GrayText">
                   -{card.text}
                 </Text>
-              </Stack>
+              </VStack>
             </Container>
           </Box>
         ))}

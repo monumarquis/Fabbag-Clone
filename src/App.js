@@ -2,12 +2,13 @@ import Navbar from './Components/Navbar';
 // import "slick-carousel/slick/slick.css"; 
 // import "slick-carousel/slick/slick-theme.css";
 import './App.css';
-import Home from './Pages/Home'
+// import Home from './Pages/Home'
+import AllRoutes from './Routes/AllRoutes';
 function App() {
   return (
     <div className="App">
      <Navbar/>
-     <Home/>
+     <AllRoutes/>
     </div>
   );
 }
