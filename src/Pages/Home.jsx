@@ -3,6 +3,7 @@ import Carousel from"../Components/Carousel"
 import Testimonials from "../Components/Testimonials"
 // import ProductCarousel from"../Components/ProductCarousel"
 import Subscription from "../Components/Subscription"
+import Footer from "../Components/Footer"
 export default function Home(){
     return (
         <>
@@ -28,6 +29,7 @@ export default function Home(){
         </VStack>
 
         <Testimonials/>
+        <Footer/>
         </>
     )
 }
