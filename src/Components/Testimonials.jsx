@@ -17,13 +17,13 @@ import Slider from 'react-slick';
 
 // Settings for the slider
 const settings = {
-  dots: true,
+  dots: false,
   arrows: false,
   fade: true,
   infinite: true,
   autoplay: true,
-  speed: 500,
-  autoplaySpeed: 3000,
+  speed: 800,
+  autoplaySpeed: 2000,
   slidesToShow: 1,
   slidesToScroll: 1,
 };
@@ -167,7 +167,6 @@ export default function Testimonials() {
                 <VStack  mb="20" spacing="7">
                     <Heading as="h1" fontWeight="bold" mt="2">TESTIMONIALS</Heading>
                     <Divider orientation='horizontal' borderColor="#ECC94B" maxW="300px" sx={{borderBottomWidth:2.5}} />
-                    <ImQuotesLeft size="100"></ImQuotesLeft>
                 </VStack>
                 
                     {/* </Center> */}
@@ -177,9 +176,9 @@ export default function Testimonials() {
                 maxW={'lg'}
                 position="absolute"
                 top="50%"
-                transform="translate(10%, -20%)"
+                transform="translate(7%, -50%)"
                 >
-                    
+                    <ImQuotesLeft size="100"></ImQuotesLeft>
                 <Heading  mt="30" fontSize={{ base: 'sm', md: 'md', lg: 'xl' }} fontWeight="500" w='100%'>
                   {card.title}
                 </Heading>

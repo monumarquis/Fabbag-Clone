@@ -13,7 +13,9 @@ import {
     useColorModeValue,
     Center,
     HStack,
-    Divider
+    Divider,
+    Container,
+    Spinner
   } from '@chakra-ui/react';
   import{auth}from'../firebase'
   import { FcGoogle } from 'react-icons/fc';
@@ -34,10 +36,12 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
           console.log(user) 
          })
     },[])
+    console.log(Auth)
     const [isloading,setloading]=useState(false)
     const [errorinput,seterrorinput]=useState("")
     const[loginerror,setloginerror]=useState(false)
     const[loginsucces,setloginsecces]=useState(false)
+    const [sitefix,setsitefix]=useState(true)
     const [formdata,setformdata]=useState({
       email: '',
       password: '',
@@ -68,17 +72,31 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
        })
       console.log(formdata)
     }
+    setTimeout(()=>{
+         setsitefix(false)
+    },1500)
+    if(sitefix){
+      return<Container maxW="2xxl" centerContent  mt='10'>
+            <Spinner
+              thickness='4px'
+              speed='0.7s'
+              emptyColor='gray.200'
+              color='#ECC94B'
+              size='xl'
+              />
+      </Container>
+  }
     return <>
       <Flex
         minH={'100vh'}
         align={'center'}
         justify={'center'}
-        bg={useColorModeValue('gray.50', 'gray.800')} pb="6">
-        <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6} >
-          <Stack align={'center'}>
+        bg='gray.50' pb="6">
+        <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6} bg='white' >
+          <Stack align={'center'}  bg='white'>
             <Heading fontSize={'4xl'}>Welcome {username}</Heading>
             <Text fontSize={'lg'} color={'gray.600'}>
-             Log in  to enjoy all of our cool <Link color={'blue.400'}>Products</Link> 
+            Let's Log in and enjoy our <Link color={'blue.400'}>Plan</Link> 
             </Text>
           </Stack>
           <Button w={'full'} colorScheme={'facebook'} leftIcon={<FaFacebook />}>
@@ -95,10 +113,10 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
         </Button>
           <Box
             rounded={'lg'}
-            bg={useColorModeValue('white', 'gray.700')}
+            bg={'#fff'}
             boxShadow={'lg'}
             p={8}>
-            <Stack spacing={4} py="10">
+            <Stack spacing={4} py="10"  bg='white'>
               <FormControl id="email" onChange={(event)=>setformdata((prev)=> ({...prev,email:event.target.value}))}>
                 <FormLabel>Email address</FormLabel>
                 <Input type="email" />

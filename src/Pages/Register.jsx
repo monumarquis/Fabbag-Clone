@@ -10,11 +10,12 @@ import {
     Button,
     Heading,
     Text,
-    useColorModeValue,
     Center,
     HStack,
     Divider,
-    Alert
+    Alert,
+    Container,
+    Spinner
   } from '@chakra-ui/react';
   import { AlertIcon,useToast } from '@chakra-ui/react';
   import { createUserWithEmailAndPassword ,updateProfile} from 'firebase/auth';
@@ -31,6 +32,7 @@ import { useState } from 'react';
     const [errorinput,seterrorinput]=useState("")
     const[loginerror,setloginerror]=useState(false)
     const[loginsucces,setloginsecces]=useState(false)
+    const [sitefix,setsitefix]=useState(true)
     const [formdata,setformdata]=useState({
       email: '',
       password: '',
@@ -73,8 +75,22 @@ import { useState } from 'react';
         setloading(false)
         setloginsecces(false)
        })
-      console.log(formdata)
-    }
+        console.log(formdata)
+      }
+    setTimeout(()=>{
+      setsitefix(false)
+ },1500)
+    if(sitefix){
+      return<Container maxW="2xxl" centerContent mt='10'>
+            <Spinner
+              thickness='4px'
+              speed='0.65s'
+              emptyColor='gray.200'
+              color='#ECC94B'
+              size='xl'
+              />
+      </Container>
+  }
    
     return <>
     {/* {loginerror ? <Button
@@ -95,7 +111,7 @@ import { useState } from 'react';
         minH={'100vh'}
         align={'center'}
         justify={'center'}
-        bg={useColorModeValue('gray.50', 'gray.800')} pb="6">
+        bg={'gray.50'} pb="6">
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
           <Stack align={'center'}>
             <Heading fontSize={'4xl'}>Welcome to our Family </Heading>
@@ -117,7 +133,7 @@ import { useState } from 'react';
         </Button>
           <Box
             rounded={'lg'}
-            bg={useColorModeValue('white', 'gray.700')}
+            bg={'#fff'}
             boxShadow={'lg'} 
             p={8}>
             <Stack spacing={4} py="10">

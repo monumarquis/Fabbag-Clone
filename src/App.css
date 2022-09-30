@@ -5,4 +5,28 @@
 .top-react-icons{
   cursor: pointer;
 }
-
+.navlink:hover{
+text-decoration: none;
+color:"#ECC94B"
+}
+.center{
+  width: 90%;
+  margin:auto;
+  display: flex;
+  justify-content: space-between;
+ 
+}
+.center button{
+  background-color: black;
+}
+.lisa {
+  border:3px solid #ECC94B;
+  border-radius: 15px;
+  width: 90%;
+  padding: 5px;
+}
+.lisa img{
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
