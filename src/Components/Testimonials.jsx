@@ -111,8 +111,11 @@ export default function Testimonials() {
       position={'relative'}
       height={'600px'}
       width={'full'}
-      overflow={'hidden'}>
+      overflow={'hidden'}
+      mt='20'
+      >
       {/* CSS files for react-slick */}
+      
       <link
         rel="stylesheet"
         type="text/css"

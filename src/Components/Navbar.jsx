@@ -27,7 +27,7 @@ w="100%" bg="#fff" top="0"   >
             <IconContext.Provider value={{className: "top-react-icons"}}>
             <BsSearch size={20} color="#E5B95F" />
             <BsSuitHeart size={20} color="#E5B95F" />
-            <Box h='10vh' display="flex" alignItems="center"  onClick={()=>setDropdown(!Dropdown) } ><FaRegUserCircle   size={20} color="#E5B95F"/></Box>
+            <Box h='10vh' display="flex" alignItems="center"  onClick={()=>setDropdown(!Dropdown) } >{Auth ?<Image borderRadius={'50%'} boxSize="25px" src="https://avatars.githubusercontent.com/u/103979538?s=40&v=4"alt='monu'/>:<FaRegUserCircle   size={20} color="#E5B95F"/>}</Box>
             <Link to="/cart"><BiCartAlt size={20} color="#E5B95F"/></Link>
             { Dropdown && !Auth && <Dropdown1/>}
             { Dropdown && Auth && <Dropdown2/>}

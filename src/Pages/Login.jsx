@@ -10,12 +10,12 @@ import {
     Button,
     Heading,
     Text,
-    useColorModeValue,
     Center,
     HStack,
     Divider,
     Container,
-    Spinner
+    Spinner,
+    useToast
   } from '@chakra-ui/react';
   import{auth}from'../firebase'
   import { FcGoogle } from 'react-icons/fc';
@@ -42,6 +42,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
     const[loginerror,setloginerror]=useState(false)
     const[loginsucces,setloginsecces]=useState(false)
     const [sitefix,setsitefix]=useState(true)
+    const toast = useToast()
     const [formdata,setformdata]=useState({
       email: '',
       password: '',
@@ -59,16 +60,33 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
        seterrorinput("")
        signInWithEmailAndPassword(auth, formdata.email, formdata.password).then((res)=>{
         // console.log(res)
+        toast({
+          title: 'Account Signed In',
+          description: "You've Signed your account succesfully.",
+          position: 'top',
+          status: 'success',
+          duration: 9000,
+          isClosable: true,
+        })
         setloading(false)
         setloginsecces(true)
         setAuth(true)
         navigate("/")
+       
        })
        .catch((err)=>{
         setloginerror(true)
         setloading(false)
         setloginsecces(false)
         setAuth(false)
+        toast({
+          title: 'Something Went Wrong.',
+          description: "Please check Your login detials",
+          position: 'top',
+          status: 'error',
+          duration: 9000,
+          isClosable: true,
+        })
        })
       console.log(formdata)
     }
@@ -76,7 +94,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
          setsitefix(false)
     },1500)
     if(sitefix){
-      return<Container maxW="2xxl" centerContent  mt='10'>
+      return<Container maxW="2xxl" centerContent  mt='250'>
             <Spinner
               thickness='4px'
               speed='0.7s'
@@ -92,8 +110,8 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
         align={'center'}
         justify={'center'}
         bg='gray.50' pb="6">
-        <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6} bg='white' >
-          <Stack align={'center'}  bg='white'>
+        <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}  >
+          <Stack align={'center'} >
             <Heading fontSize={'4xl'}>Welcome {username}</Heading>
             <Text fontSize={'lg'} color={'gray.600'}>
             Let's Log in and enjoy our <Link color={'blue.400'}>Plan</Link> 

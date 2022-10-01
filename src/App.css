@@ -13,20 +13,106 @@ color:"#ECC94B"
   width: 90%;
   margin:auto;
   display: flex;
-  justify-content: space-between;
- 
+  justify-content: space-around;
+ margin-bottom: 50px;
 }
-.center button{
-  background-color: black;
+.slick-prev,
+.slick-next{
+  background-color: gray;
+  color:white;
+  /* padding: 5px; */
+  right:5px
+}
+.center button:hover{
+  background-color: gray;
+
+}
+.jungkook{
+  text-align: left;
+}
+.jungkook img{
+  width: 90%;
+}
+.jungkook :nth-child(2){
+  font-size: 14px;
+  width: 90%;
+}
+.jungkook :nth-child(3){
+ color: rgb(211, 208, 208);
+ font-style: italic;
+  width: 90%;
 }
 .lisa {
-  border:3px solid #ECC94B;
-  border-radius: 15px;
+  border:5px solid #ECC94B;
+  border-radius: 29px;
   width: 90%;
-  padding: 5px;
+  padding: 3px;
 }
 .lisa img{
   width: 100%;
   height: auto;
-  border-radius: 15px;
+  border-radius: 23px;
+}
+.lisa+h3{
+  text-align: center;
+  width: 80%;
+ margin-left: 10px;
+ margin-top: 15px;
+}
+.slick-arrow slick-prev{
+  color: black;
+  display: none;
+}
+.oppa{
+  background-color: #ECC94B;
+  padding: 50px;
+  width: 90%;
+}
+.nobita{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+  width: 40%;
+  align-items: stretch;
+}
+.nobita img{
+width: 40%;
+border: 2px solid black;
+object-fit: cover;
+}
+.scroll-to-top{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.cont {
+  position: relative;
+  cursor: pointer;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.521);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+.cont:hover .overlay {
+  height: 100%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
