@@ -8,7 +8,7 @@ export default function AssociativeBrands() {
          setsitefix(false)
     },1500)
     if(sitefix){
-        return<Container maxW="2xxl" centerContent  mt='10'>
+        return<Container maxW="2xxl" centerContent  mt='250'>
                 <Spinner
                 thickness='4px'
                 speed='0.65s'

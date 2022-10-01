@@ -15,7 +15,7 @@ import {
     Divider,
     Alert,
     Container,
-    Spinner
+    Spinner,
   } from '@chakra-ui/react';
   import { AlertIcon,useToast } from '@chakra-ui/react';
   import { createUserWithEmailAndPassword ,updateProfile} from 'firebase/auth';
@@ -28,6 +28,7 @@ import { NavLink } from "react-router-dom";
 import { useState } from 'react';
   export default function Register() {
     const navigate = useNavigate();
+    const toast = useToast();
     const [isloading,setloading]=useState(false)
     const [errorinput,seterrorinput]=useState("")
     const[loginerror,setloginerror]=useState(false)
@@ -59,7 +60,6 @@ import { useState } from 'react';
       setloading(true)
        seterrorinput("")
        createUserWithEmailAndPassword(auth, formdata.email, formdata.password).then((res)=>{
-        // console.log(res)
         setloading(false)
         setloginsecces(true)
         const user = res.user
@@ -67,7 +67,14 @@ import { useState } from 'react';
           displayName:formdata.firstname+" "+formdata.lastname
         })
         console.log(user)
-
+        toast({
+          title: 'Account Created',
+          description: "We've created your account succesfully.",
+          position: 'top',
+          status: 'success',
+          duration: 9000,
+          isClosable: true,
+        })
         navigate("/login")
        })
        .catch((err)=>{
@@ -81,7 +88,7 @@ import { useState } from 'react';
       setsitefix(false)
  },1500)
     if(sitefix){
-      return<Container maxW="2xxl" centerContent mt='10'>
+      return<Container maxW="2xxl" centerContent mt='250'>
             <Spinner
               thickness='4px'
               speed='0.65s'
@@ -93,20 +100,6 @@ import { useState } from 'react';
   }
    
     return <>
-    {/* {loginerror ? <Button
-      onClick={() =>
-        toast({
-          title: 'Account created.',
-          description: "We've created your account for you.",
-          status: 'success',
-          duration: 9000,
-          isClosable: true,
-          position: 'top',
-        })
-      }
-    >
-      Show Toast
-    </Button> :""} */}
       <Flex
         minH={'100vh'}
         align={'center'}

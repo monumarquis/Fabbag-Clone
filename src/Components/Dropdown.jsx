@@ -1,4 +1,4 @@
-  import {Container,VStack,Text,Button,Divider} from '@chakra-ui/react'
+  import {Container,VStack,Text,Button,Divider,useToast} from '@chakra-ui/react'
 import { NavLink } from 'react-router-dom'
 import { getAuth, signOut } from "firebase/auth";
 import {AuthContext} from'../Context/AuthContext'
@@ -21,11 +21,20 @@ import { useContext ,useState } from 'react';
   function Dropdown2(){
     const{setusername,setAuth}=useContext(AuthContext)
     const [isloading,setloading]=useState(false)
+    const toast= useToast()
     const handlesignout=()=>{
         const auth = getAuth();
         setloading(true)
         signOut(auth).then(() => {
           // Sign-out successful
+          toast({
+            title: 'Signed out ',
+            description: "you've Signed out  your account recently",
+            position: 'top',
+            status: 'info',
+            duration: 9000,
+            isClosable: true,
+          })
           setloading(false)
           setAuth(false)
           setusername("")
