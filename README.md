@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Project-Dineout-FullStack
+FabbagIndia's largest beauty subscription service. Receive amazing sample/full-size products at least twice the price you pay in a delightful bag every month
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Preview
 
-## Available Scripts
+![preview](https://github.com/sayanwastaken/project_dineout/raw/main/frontend/public/images/preview.gif)
 
-In the project directory, you can run:
+# Features
 
-### `npm start`
+<p>User Login and Authentication </p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![User Authentication](https://github.com/sayanwastaken/project_dineout/raw/main/frontend/public/images/d2.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p>Home</p>
 
-### `npm test`
+![User Authentication](https://github.com/sayanwastaken/project_dineout/raw/main/frontend/public/images/d1.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p>Restaurant Listing Page</p>
 
-### `npm run build`
+![User Authentication](https://github.com/sayanwastaken/project_dineout/raw/main/frontend/public/images/d3.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p>Restaurant Landing Page</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![User Authentication](https://github.com/sayanwastaken/project_dineout/raw/main/frontend/public/images/d4.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p>Reservation Calander</p>
 
-### `npm run eject`
+![User Authentication](https://github.com/sayanwastaken/project_dineout/raw/main/frontend/public/images/d5.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p>Reservation Records</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![User Authentication](https://github.com/sayanwastaken/project_dineout/raw/main/frontend/public/images/d6.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<h4>Want to run in your local Machine? Great!<h4>
 
-## Learn More
+<h4>To run, follow these steps:</h4>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  <ul>
+    <li>clone my repository https://github.com/sayanwastaken/project_dineout </li>
+    <li>Open that code in your Code Editor</li>
+    <li>cd to frontend</li>
+    <li> run cmd npm install</li>
+    <li>run 'npm run start' to Run Project</li>
+    <li>open your Browser and go to 'localhost:3000'</li>
+    <li>thats all !</li>
+  </ul>
+  
+  # TechStacks
+  <ul>
+  <li>React</li>
+  <li>Node js</li>
+  <li>Express</li> 
+  <li>MongoDb</li>
+  </ul>
+  
+  # Developers
+<ul>
+  <li>Sayan Das
+  </li>
+   <li>
+     Aman Kumar
+  </li>
+   <li>
+     Robby Dongre
+  </li>
+   <li>
+     Akshay Thakur
+  </li>
+  </ul>
